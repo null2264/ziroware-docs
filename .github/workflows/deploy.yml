@@ -14,7 +14,7 @@ jobs:
         working-directory: "docs"
 
     permissions:
-      content: read
+      contents: read
       pages: write
       id-token: write
 
