@@ -1,0 +1,13 @@
+diff --git a/utils/navigation.ts b/utils/navigation.ts
+index 2870d619e16bc8c0983fc22aed0ab936293ff8fa..e0ccd4673eb1e037b1ef0a74119a6dcdfecf0d69 100644
+--- a/utils/navigation.ts
++++ b/utils/navigation.ts
+@@ -285,7 +285,7 @@ function getOrder(routeOrDir: Route | Dir): number {
+ 	return isDir(routeOrDir)
+ 		? Math.min(...Object.values(routeOrDir).flatMap(getOrder))
+ 		: // If no order value is found, set it to the largest number possible.
+-			(routeOrDir.entry.data.sidebar.order ?? Number.MAX_VALUE);
++			(routeOrDir.entry.data.sidebar.order ?? 1000);
+ }
+ 
+ /** Sort a directory’s entries by user-specified order or alphabetically if no order specified. */
