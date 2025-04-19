@@ -15,6 +15,7 @@
     "astro": "^5.7.4",
     "sharp": "^0.32.6",
     "starlight-sidebar-topics": "^0.6.0",
+    "starlight-sidebar-topics-dropdown": "^0.5.1",
     "typescript": "^5.8.3"
   }
 }

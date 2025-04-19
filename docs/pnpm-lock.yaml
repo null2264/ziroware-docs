@@ -23,6 +23,9 @@ importers:
       starlight-sidebar-topics:
         specifier: ^0.6.0
         version: 0.6.0(@astrojs/starlight@0.32.6(astro@5.7.4(rollup@4.40.0)(typescript@5.8.3)(yaml@2.7.1)))
+      starlight-sidebar-topics-dropdown:
+        specifier: ^0.5.1
+        version: 0.5.1(@astrojs/starlight@0.32.6(astro@5.7.4(rollup@4.40.0)(typescript@5.8.3)(yaml@2.7.1)))(starlight-sidebar-topics@0.6.0(@astrojs/starlight@0.32.6(astro@5.7.4(rollup@4.40.0)(typescript@5.8.3)(yaml@2.7.1))))
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
@@ -1842,6 +1845,13 @@ packages:
 
   space-separated-tokens@2.0.2:
     resolution: {integrity: sha512-PEGlAwrG8yXGXRjW32fGbg66JAlOAwbObuqVoJpv/mRgoWDQfgH1wDPvtzWyUSNAXBGSk8h755YDbbcEy3SH2Q==}
+
+  starlight-sidebar-topics-dropdown@0.5.1:
+    resolution: {integrity: sha512-vEKQZnl90dVdqQWTauUs+L4I9cOqmw0gnNa6C9dB8KgXE1QxFAJikEMDDS9IF24kGRL+7dXr+ZZWWhY6Ve+mEA==}
+    engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
+    peerDependencies:
+      '@astrojs/starlight': '>=0.30'
+      starlight-sidebar-topics: '>=0.6'
 
   starlight-sidebar-topics@0.6.0:
     resolution: {integrity: sha512-ysmOR7zaHYKtk18/mpW4MbEMDioR/ZBsisu9bdQrq0v9BlHWpW7gAdWlqFWO9zdv1P7l0Mo1WKd0wJ0UtqOVEQ==}
@@ -4784,6 +4794,11 @@ snapshots:
   source-map@0.7.4: {}
 
   space-separated-tokens@2.0.2: {}
+
+  starlight-sidebar-topics-dropdown@0.5.1(@astrojs/starlight@0.32.6(astro@5.7.4(rollup@4.40.0)(typescript@5.8.3)(yaml@2.7.1)))(starlight-sidebar-topics@0.6.0(@astrojs/starlight@0.32.6(astro@5.7.4(rollup@4.40.0)(typescript@5.8.3)(yaml@2.7.1)))):
+    dependencies:
+      '@astrojs/starlight': 0.32.6(astro@5.7.4(rollup@4.40.0)(typescript@5.8.3)(yaml@2.7.1))
+      starlight-sidebar-topics: 0.6.0(@astrojs/starlight@0.32.6(astro@5.7.4(rollup@4.40.0)(typescript@5.8.3)(yaml@2.7.1)))
 
   starlight-sidebar-topics@0.6.0(@astrojs/starlight@0.32.6(astro@5.7.4(rollup@4.40.0)(typescript@5.8.3)(yaml@2.7.1))):
     dependencies:

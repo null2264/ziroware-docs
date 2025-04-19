@@ -40,6 +40,9 @@ export default defineConfig({
                     },
                 ),
             ],
+            components: {
+                Sidebar: './src/components/Sidebar.astro',
+            },
         }),
     ],
 });
