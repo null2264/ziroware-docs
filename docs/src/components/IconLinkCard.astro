@@ -3,7 +3,7 @@ import { Icon } from "@astrojs/starlight/components"
 import type { HTMLAttributes } from "astro/types"
 
 interface Props extends Omit<HTMLAttributes<"a">, "title"> {
-  icon?: keyof typeof Icon;
+  icon?: string | undefined;
   title: string;
   description?: string;
 }
@@ -15,7 +15,7 @@ const { icon, title, description, ...attributes } = Astro.props;
 	<span class="sl-flex stack">
 		<a {...attributes}>
       <p class="title sl-flex">
-        {icon && <Icon name={icon} class="leading-icon" size="1.333em" />}
+        {icon && <Icon name={icon as keyof typeof Icon} class="leading-icon" size="1.333em" />}
         <span class="title" set:html={title} />
       </p>
 		</a>
