@@ -25,9 +25,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-      - uses: pnpm/action-setup@v3
+      - uses: pnpm/action-setup@v4
         with:
-          version: 8
+          version: ^10.8.1
           run_install: false
           package_json_file: "docs/package-lock.json"
 
