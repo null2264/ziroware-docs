@@ -1,18 +1,18 @@
 ---
+import { CardGrid } from "@astrojs/starlight/components"
+import IconLinkCard from "../IconLinkCard.astro"
+
 const excluded = ["landing"]
 const { topics } = Astro.locals.starlightSidebarTopics
 ---
 
-<!-- TODO: -->
-<nav>
+<CardGrid>
   {
     topics.map((topic) =>
       (excluded.includes(topic.label.toLowerCase())) ? null :
       (
-        <a href={topic.link} aria-current={topic.isCurrent ? 'page' : false}>
-          {topic.label}
-        </a>
+        <IconLinkCard icon={topic.icon} title={topic.label} href={topic.link} />
       )
     )
   }
-</nav>
+</CardGrid>
