@@ -26,12 +26,13 @@ export default defineConfig({
                             items: ["guides/example"],
                         },
                         {
-                            id: "reference",
-                            label: "Reference",
-                            link: "/reference/",
-                            icon: "information",
+                            id: "cobblegen",
+                            label: "CobbleGen",
+                            link: "/cobblegen/",
+                            icon: "seti:webpack",
                             items: [
-                                { label: "Reference", autogenerate: { directory: "reference/test" } },
+                                "cobblegen",
+                                { label: "Configuration", autogenerate: { directory: "cobblegen/config" } },
                             ],
                         },
                     ],

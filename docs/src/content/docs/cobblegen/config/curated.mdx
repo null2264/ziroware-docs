@@ -1,0 +1,134 @@
+---
+title: Curated Configuration
+description: Pre-defined Configurations for CobbleGen.
+sidebar:
+  order: 1001
+---
+
+import { Tabs, TabItem } from "@astrojs/starlight/components"
+
+### Deepslate Generator
+
+Generate Deepslates below Y=0
+
+```json5
+{
+  "cobbleGen": [
+    {
+      "id": "minecraft:cobbled_deepslate",
+      "weight": 100,
+      "maxY": 0
+    },
+    {
+      "id": "minecraft:cobblestone",
+      "weight": 100,
+      "minY": -1
+    }
+  ],
+  "stoneGen": [
+    {
+      "id": "minecraft:deepslate",
+      "weight": 100,
+      "maxY": 0
+    },
+    {
+      "id": "minecraft:stone",
+      "weight": 100,
+      "minY": -1
+    }
+  ],
+  "formatVersion": "1.0"
+}
+```
+
+### Ore Generation
+
+Generate randomized ores if block is generated above bedrock
+
+<Tabs>
+	<TabItem label="v1.0">
+  ```json5
+  {
+    "customGen": {
+      "cobbleGen": {
+        "minecraft:bedrock": [
+          {
+            "id": "minecraft:emerald_ore",
+            "weight": 2
+          },
+          {
+            "id": "minecraft:diamond_ore",
+            "weight": 5
+          },
+          {
+            "id": "minecraft:lapis_ore",
+            "weight": 8
+          },
+          {
+            "id": "minecraft:gold_ore",
+            "weight": 10
+          },
+          {
+            "id": "minecraft:iron_ore",
+            "weight": 15
+          },
+          {
+            "id": "minecraft:coal_ore",
+            "weight": 20
+          },
+          {
+            "id": "minecraft:cobblestone",
+            "weight": 80
+          }
+        ]
+      }
+    },
+    "formatVersion": "1.0"
+  }
+  ```
+  </TabItem>
+	<TabItem label="v1.1">
+  ```json5
+  {
+    "cobbleGen": [
+      {
+        "id": "minecraft:emerald_ore",
+        "weight": 5,
+        "modifier": "minecraft:bedrock"
+      },
+      {
+        "id": "minecraft:cobblestone",
+        "weight": 80,
+        "modifier": "minecraft:bedrock"
+      },
+      {
+        "id": "minecraft:iron_ore",
+        "weight": 15,
+        "modifier": "minecraft:bedrock"
+      },
+      {
+        "id": "minecraft:diamond_ore",
+        "weight": 5,
+        "modifier": "minecraft:bedrock"
+      },
+      {
+        "id": "minecraft:coal_ore",
+        "weight": 20,
+        "modifier": "minecraft:bedrock"
+      },
+      {
+        "id": "minecraft:lapis_ore",
+        "weight": 8,
+        "modifier": "minecraft:bedrock"
+      },
+      {
+        "id": "minecraft:gold_ore",
+        "weight": 10,
+        "modifier": "minecraft:bedrock"
+      }
+    ],
+    "formatVersion": "1.1"
+  }
+  ```
+  </TabItem>
+</Tabs>
