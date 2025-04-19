@@ -1,0 +1,62 @@
+---
+title: Migration
+description: Config format changes.
+sidebar:
+  order: 1001
+---
+
+import { Tabs, TabItem } from "@astrojs/starlight/components"
+
+:::note
+This page are meant to provide an overview on migrating your config file between format versions.
+:::
+
+:::caution
+Be sure to change the value of `formatVersion` when migrating.
+:::
+
+### Format Version 1.1
+
+In format version 1.1, customGen are now merged with into basic generators, you now only need to specify `modifier` parameter in the result block.
+
+For example:
+
+<Tabs>
+	<TabItem label="Format v1.0">
+  ```json5
+  {
+    "customGen": {
+      // Type of generator
+      "cobbleGen": {
+        // The modifier
+        "minecraft:bedrock": [
+          // Results
+          {
+            "id": "minecraft:stone",
+            "weight": 100.0
+          },
+        ]
+      }
+    },
+    "formatVersion": "1.0"
+  }
+  ```
+  </TabItem>
+	<TabItem label="Format v1.1">
+  ```json5
+  {
+    // Type of generator
+    "cobbleGen": [
+      // Results
+      {
+        "id": "minecraft:stone",
+        "weight": 100.0,
+        // The modifier
+        "modifier": "minecraft:bedrock"
+      }
+    ],
+    "formatVersion": "1.1"
+  }
+  ```
+  </TabItem>
+</Tabs>
