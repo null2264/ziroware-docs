@@ -1,0 +1,18 @@
+---
+const excluded = ["landing"]
+const { topics } = Astro.locals.starlightSidebarTopics
+---
+
+<!-- TODO: -->
+<nav>
+  {
+    topics.map((topic) =>
+      (excluded.includes(topic.label.toLowerCase())) ? null :
+      (
+        <a href={topic.link} aria-current={topic.isCurrent ? 'page' : false}>
+          {topic.label}
+        </a>
+      )
+    )
+  }
+</nav>
