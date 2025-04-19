@@ -13,6 +13,13 @@ export default defineConfig({
                 starlightSidebarTopics(
                     [
                         {
+                            id: "landing",
+                            label: "Landing",
+                            link: "/landing/",
+                            icon: "rocket",
+                            items: [],
+                        },
+                        {
                             label: "Guides",
                             link: "/guides/example",
                             icon: "open-book",
@@ -28,6 +35,9 @@ export default defineConfig({
                             ],
                         },
                     ],
+                    {
+                        exclude: ['/landing', '/landing/**/*'],
+                    },
                 ),
             ],
         }),
