@@ -1,2 +1,5 @@
 patchedDependencies:
   '@astrojs/starlight': patches/@astrojs__starlight.patch
+
+onlyBuiltDependencies:
+  - sharp
