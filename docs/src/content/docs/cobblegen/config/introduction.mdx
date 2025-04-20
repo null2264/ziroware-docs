@@ -8,9 +8,11 @@ sidebar:
 import { Tabs, TabItem } from "@astrojs/starlight/components"
 
 :::note
-You can use [CobbleGen Configurator WebApp](https://cobblegen.aap.my.id) instead if you don't want to configure the JSON files manually.
+You can use [CobbleGen Configurator WebApp](https://cobblegen.aap.my.id) instead if you don't want to configure the config files manually.
 :::
 
+<Tabs>
+	<TabItem label="Format v1.x">
 :::tip
 CobbleGen uses a more lenient format of JSON called [HJSON](https://hjson.github.io/)/[JSON5](https://json5.org/), meaning you don't need to care that much about the comma and stuff.
 :::
@@ -19,31 +21,33 @@ There are 2 config files for CobbleGen:
 - `cobblegen.json5` - Where you define the generators
 - `cobblegen-meta.json5` - To configure CobbleGen's behaviour
 
-<Tabs>
-	<TabItem label="Format v1.x">
-  Every config file must be wrapped by `{}` otherwise it won't be valid, for example:
+Every config file must be wrapped by `{}` otherwise it won't be valid, for example:
 
-  ```json5
-  {
-    "cobbleGen": [
-      {
-        "id": "minecraft:cobblestone",
-        "weight": 100.0
-      }
-    ],
-    // Be sure to define the config format version to prevent breakage in the future
-    "formatVersion": "1.1"
-  }
-  ```
+```json5
+{
+  "cobbleGen": [
+    {
+      "id": "minecraft:cobblestone",
+      "weight": 100.0
+    }
+  ],
+  // Be sure to define the config format version to prevent breakage in the future
+  "formatVersion": "1.1"
+}
+```
   </TabItem>
 	<TabItem label="Format v2.x">
-  In the future, CobbleGen will start using [TOML](https://toml.io/) instead of JSON to make it a lot easier for people to write the config. Check out [GH-53](https://github.com/null2264/CobbleGen/issues/53) for the latest draft.
+In the future, CobbleGen will start using [TOML](https://toml.io/) instead of JSON to make it a lot easier for people to write the config. Check out [GH-53](https://github.com/null2264/CobbleGen/issues/53) for the latest draft.
 
-  ```toml
-  [[cobblegen]]
-  id = "minecraft:cobblestone"
-  weight = 100.0
-  ```
+There are 2 config files for CobbleGen:
+- `cobblegen.toml` - Where you define the generators
+- `cobblegen-meta.toml` - To configure CobbleGen's behaviour
+
+```toml
+[[cobblegen]]
+id = "minecraft:cobblestone"
+weight = 100.0
+```
   </TabItem>
 </Tabs>
 
