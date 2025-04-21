@@ -33,6 +33,7 @@ export default defineConfig({
                             items: [
                                 "cobblegen",
                                 { label: "Configuration", autogenerate: { directory: "cobblegen/config" } },
+                                { label: "API", autogenerate: { directory: "cobblegen/api" } },
                             ],
                         },
                     ],
