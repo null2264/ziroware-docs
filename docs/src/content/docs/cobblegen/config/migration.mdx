@@ -60,3 +60,30 @@ For example:
   ```
   </TabItem>
 </Tabs>
+
+### Format Version 1.0
+
+:::caution
+If your config is currently using this format, be sure to include `"formatVersion": "1.0"`!
+
+For example:
+
+```json5
+{
+  "customGen": {
+    "cobbleGen": {
+      "minecraft:bedrock": [
+        {
+          "id": "minecraft:stone",
+          "weight": 100.0
+        },
+      ]
+    }
+  },
+  // Be sure to include this, otherwise the mod will assume you're using the newest format.
+  "formatVersion": "1.0"
+}
+```
+:::
+
+Format version 1.0 is the first version used by CobbleGen.
